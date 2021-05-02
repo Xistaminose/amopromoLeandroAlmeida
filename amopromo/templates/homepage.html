@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+{% block section %}
+<div>
+  <table id="example" class="DataTable" style="width:100%">
+        <thead>
+            <tr>
+                <th>Distancia</th>
+                <th>Preço</th>
+                <th>Avião</th>
+                <th>departure</th>
+                <th>Arrival</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Distancia</th>
+                <th>Preço</th>
+                <th>Avião</th>
+                <th>departure</th>
+                <th>Arrival</th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+
+  
+  
+  
+  {% endblock %}
+
+  {% block script %}
+  <script>
+  $(document).ready(function() {
+    var oTable = $('#example').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{% url 'order_list_json' %}"
+    });
+
+});
+</script>
+  {% endblock %}
+

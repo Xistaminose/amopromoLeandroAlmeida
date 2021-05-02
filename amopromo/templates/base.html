@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Briar.io - Url shortener</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bulma.min.js"></script>
+
+</head>
+
+<body>
+
+{% block navbar %}
+  <nav class="navbar is-transparent">
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">Home</a>
+        {% comment %} <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">About Us</a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#">Our Team</a>
+            <a class="navbar-item" href="#">Our Story</a>
+            <a class="navbar-item" href="#">Locations</a>
+          </div>
+        </div> {% endcomment %}
+      </div>
+
+      {% comment %} <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-primary" href="#">
+              <span class="icon">
+                <i class="far fa-envelope-open"></i>
+              </span>
+              <span>Contact</span>
+            </a>
+            </p>
+          </div>
+        </div>
+      </div> {% endcomment %}
+    </div>
+  </nav>
+{% endblock %}
+
+{% block hero %}
+  <section class="hero is-medium is-primary is-bold">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h1 class="title">Biar.io</h1>
+        <h2 class="subtitle">Seus links menores e de graça</h2>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+{% block section %}
+
+{% endblock %}
+
+ 
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Encurtador de links</strong>
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+
+{% block script %}
+
+{% endblock %}
+
