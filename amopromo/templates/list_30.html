@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% block subtitle %}30 viagens mais demoradas  <i class="fa fa-plane" aria-hidden="true"></i>{% endblock %}
+{% block section %}
+<div>
+  <table id="Table" class="table is-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Duração</th>
+                <th>Distância</th>
+                <th>Aeronave</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for flight in top_30 %}
+        </tr>
+        <td>{{ flight.time }}</td>
+        <td>{{ flight.distance }}</td>
+        <td>{{ flight.aircraft }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Duração</th>
+                <th>Distância</th>
+                <th>Aeronave</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<section class="hero is-medium is-primary is-bold">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h1 class="title">Estado com o maior número de aeroportos:</h1>
+        <h2 class="subtitle">{{ state }}</h2>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+
+  {% block script %}
+  <script>
+  $(document).ready(function() {
+    var oTable = $('#example').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{% url 'order_list_json' %}"
+    });
+
+});
+</script>
+  {% endblock %}
+

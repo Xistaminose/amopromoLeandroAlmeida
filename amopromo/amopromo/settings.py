@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'amopromo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd3kjlvf99cp7cc',
-        'USER': 'mblgruishquudo',
-        'PASSWORD': 'c09b06ebaee3f5faab69a6c2964aedccaf2c573a43507430ed8072d9ce06546e',
-        'HOST': 'ec2-54-163-254-204.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD':'postgres',
+        'HOST': 'db',
         'PORT': '5432'
     }
 }

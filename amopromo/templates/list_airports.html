@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+{% block subtitle %}Aeroportos mais distantes  <i class="fa fa-plane" aria-hidden="true"></i>{% endblock %}
+{% block section %}
+<div>
+  <table id="Table" class="table is-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Origem</th>
+                <th>Distante</th>
+                <th>Aeroporto distante</th>
+                <th>Proximo</th>
+                <th>Aeroporto proximo</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for flight in airports %}
+        </tr>
+        <td>{{ flight.airport }}</td>
+        {% if flight.distant %}
+        <td>{{ flight.distant.arrival }}</td>
+        <td>{{ flight.distant.distance }}</td>
+        {% else %}
+        <td>Sem voos</td>
+        <td>Sem voos</td>
+        {% endif %}
+        {% if flight.near %}
+        <td>{{ flight.near.arrival }}</td>
+        <td>{{ flight.near.distance }}</td
+        {% else %}
+        <td>Sem voos</td>
+        <td>Sem voos</td>
+        {% endif %}
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Origem</th>
+                <th>Distante</th>
+                <th>Aeroporto distante</th>
+                <th>Proximo</th>
+                <th>Aeroporto proximo</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+  {% endblock %}
+
+  {% block script %}
+  <script>
+  $(document).ready(function() {
+    var oTable = $('#example').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{% url 'order_list_json' %}"
+    });
+
+});
+</script>
+  {% endblock %}
+

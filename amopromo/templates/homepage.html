@@ -1,34 +1,32 @@
 {% extends 'base.html'%}
-
+{% block subtitle %}Lista completa de voos  <i class="fa fa-plane" aria-hidden="true"></i>{% endblock %}
 {% block section %}
 <div>
-  <table id="example" class="DataTable" style="width:100%">
+  <table id="example" class="table is-striped" style="width:100%">
         <thead>
             <tr>
-                <th>Distancia</th>
+                <th>Origem</th>
+                <th>Destino</th>
+                <th>Distância</th>
                 <th>Preço</th>
+                <th>Tempo</th>
                 <th>Avião</th>
-                <th>departure</th>
-                <th>Arrival</th>
             </tr>
         </thead>
         <tbody>
         </tbody>
         <tfoot>
             <tr>
-                <th>Distancia</th>
+                <th>Origem</th>
+                <th>Destino</th>
+                <th>Distância</th>
                 <th>Preço</th>
+                <th>Tempo</th>
                 <th>Avião</th>
-                <th>departure</th>
-                <th>Arrival</th>
             </tr>
         </tfoot>
     </table>
     </div>
-
-  
-  
-  
   {% endblock %}
 
   {% block script %}

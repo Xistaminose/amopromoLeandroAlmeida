@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Briar.io - Url shortener</title>
+  <title>AmoPromo - BackEnd test - Leandro Almeida</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
@@ -12,7 +12,6 @@
   <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bulma.min.js"></script>
-
 </head>
 
 <body>
@@ -28,31 +27,11 @@
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">Home</a>
-        {% comment %} <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">About Us</a>
-          <div class="navbar-dropdown is-boxed">
-            <a class="navbar-item" href="#">Our Team</a>
-            <a class="navbar-item" href="#">Our Story</a>
-            <a class="navbar-item" href="#">Locations</a>
-          </div>
-        </div> {% endcomment %}
-      </div>
+        <a class="navbar-item" href="{% url 'flight_list' %}">Lista completa (datatable)</a>
+        <a class="navbar-item" href="{% url 'flight_list_30' %}">30 viagens mais demoradas</a>
+                <a class="navbar-item" href="{% url 'list_airports_distance' %}">Distancia entre aeroportos</a>
 
-      {% comment %} <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button is-primary" href="#">
-              <span class="icon">
-                <i class="far fa-envelope-open"></i>
-              </span>
-              <span>Contact</span>
-            </a>
-            </p>
-          </div>
-        </div>
-      </div> {% endcomment %}
+      </div>
     </div>
   </nav>
 {% endblock %}
@@ -61,8 +40,9 @@
   <section class="hero is-medium is-primary is-bold">
     <div class="hero-body">
       <div class="container is-max-desktop">
-        <h1 class="title">Biar.io</h1>
-        <h2 class="subtitle">Seus links menores e de graça</h2>
+        <h1 class="title">AmoPromo backend test - Leandro Gabriel de Almeida</h1>
+        
+        <h2 class="subtitle">{% block subtitle %}{% endblock %}</h2>
       </div>
     </div>
   </section>
@@ -76,8 +56,9 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Encurtador de links</strong>
+        Feito com amor <i class="fa fa-heart" aria-hidden="true"></i>
       </p>
+      <p><strong>Leandro Gabriel de Almeida</strong><p>
     </div>
   </footer>
 

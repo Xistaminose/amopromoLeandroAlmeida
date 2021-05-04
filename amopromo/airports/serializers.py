@@ -5,4 +5,4 @@ from .models import airports
 class airportSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = airports
-        fields = ('name', 'iata', 'lat', 'lon')
+        fields = ('name', 'iata', 'lat', 'lon', 'state')
