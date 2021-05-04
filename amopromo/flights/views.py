@@ -55,7 +55,10 @@ def homepage(request):
 def list_30(request):
     aeroporto = airports.state_with_most_airports()
     top_30 = flight.get_top_n_time(30)
-    return render(request, 'list_30.html',{'top_30': top_30,'state':aeroporto[0]})
+    if aeroporto:
+        return render(request, 'list_30.html',{'top_30': top_30,'state':aeroporto[0]})
+    else:
+        return render(request, 'list_30.html',{'top_30': top_30,'state':'Sem aeroportos'})
 
 def list_airports_distance(request):
     aeroportos = airports.objects.distinct()

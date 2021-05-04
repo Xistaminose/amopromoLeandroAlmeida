@@ -14,7 +14,10 @@ class airports(models.Model):
 
     @staticmethod
     def state_with_most_airports():
-        x = airports.objects.values_list('state').annotate(airports_count=Count('state')).order_by('-airports_count')
-        return x[0]
+        try:
+            x = airports.objects.values_list('state').annotate(airports_count=Count('state')).order_by('-airports_count')
+            return x[0]
+        except:
+            return None
 
 # Create your models here.
