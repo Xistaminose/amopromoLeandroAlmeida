@@ -62,7 +62,11 @@ def main():
     departure_date = str((today + datetime.timedelta(days = 40)).date())
     df.apply(lambda column: save_airports(column), axis=1)
     for i in df.index:
+        times = datetime.datetime.now()
         df.apply(lambda column: get_data(column,df.lon[i],df.lat[i],i,departure_date),axis=1)
+        print('total', datetime.datetime.now() - times)
 
 if __name__ == '__main__':
+    timer = datetime.datetime.now()
     main()
+    print('total', datetime.datetime.now() - timer)

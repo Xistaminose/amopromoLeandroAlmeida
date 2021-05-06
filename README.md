@@ -20,3 +20,10 @@ python flights.py
 ```
 
 
+## Script rápido
+
+O script flights_faster.py é mais rápido que o flights.py
+Nele usamos aiohttp e asyncio para fazer os requests e posts mais rápidamente.
+```
+python flights_faster.py
+```
